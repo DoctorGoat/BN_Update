@@ -65,15 +65,19 @@ namespace BN_Update
                 Console.WriteLine("DOWNLOADING GAME. PLEASE WAIT. I DO NOT KNOW WHAT HAPPENS IF YOU DON'T HAVE INTERNET.");
                 client.DownloadFile(@"https://github.com/" + matches[0], matches[0].ToString().Split('/').Last());
                 ZipFile.ExtractToDirectory(matches[0].ToString().Split('/').Last(), Environment.CurrentDirectory, true);
+                File.Delete(returnValue);
                 Console.WriteLine("DOWNLOADING KENAN'S PACK.");
                 client.DownloadFile(@"https://github.com/Kenan2000/Bright-Nights-Kenan-Mod-Pack/archive/master.zip", "kenan.zip");
                 ZipFile.ExtractToDirectory("kenan.zip", Environment.CurrentDirectory + "\\kenan\\");
+                File.Delete("kenan.zip");
                 Console.WriteLine("DOWNLOADING GOATGOD'S PACK.");
                 client.DownloadFile(@"https://github.com/TheGoatGod/Goats-Mod-Compilation/archive/Bright-Nights.zip", "goatgod.zip");
                 ZipFile.ExtractToDirectory("goatgod.zip", Environment.CurrentDirectory + "\\goatgod\\");
+                File.Delete("goatgod.zip");
                 Console.WriteLine("DOWNLOADING SDG TILESET AND ACTUALLY INSTALLING IT UNLIKE THE LAST TWO.");
                 client.DownloadFile(@"https://github.com/SomeDeadGuy/UndeadPeopleTileset/archive/master.zip", "sdg.zip");
                 ZipFile.ExtractToDirectory("sdg.zip", Environment.CurrentDirectory + "\\gfx\\");
+                File.Delete("sdg.zip");
             }
         }
 
